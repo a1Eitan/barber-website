@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <title>עמוד הבית</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Top Navigation -->
+  <div class="top-bar">
+    <div class="nav-left">
+      <div class="nav-logo">
+        <img src="images/logo.png" alt="Barber Logo" class="nav-logo-img">
+      </div>
+      <div class="nav-buttons">
+        <a href="index.html" class="nav-btn active">עמוד הבית</a>
+        <a href="#services" class="nav-btn">שרותים</a>
+        <a href="course.html" class="nav-btn">קורס ספרות</a>
+        <a href="contact.html" class="nav-btn">צור קשר</a>
+      </div>
+    </div>
+    <div class="nav-logo">💈</div>
+  </div>
+
+  <!-- Main Layout -->
+  <div class="main-content">
+    <!-- Right side: logo + button -->
+    <div class="logo-area">
+      <img src="images/logo.png" alt="Barber Logo" class="logo-img">
+      <button class="book-btn">לקביעת תור</button>
+    </div>
+
+    <!-- Left side: image upload -->
+    <div class="upload-area">
+      <h3>העלה תמונה שלך וראה תסרוקות שונות</h3>
+      <input type="file" accept="image/*" onchange="sendImageToZapier(event)">
+      <div class="preview-box">
+        <img id="userImage" src="" alt="User Preview" style="display: none;">
+        <img src="images/sample_hairstyle.png" alt="Hairstyle Overlay">
+      </div>
+    </div>
+  </div>
+
+  <!-- Services Section -->
+  <div class="action-side" id="services">
+    <h3>שרותים</h3>
+    <div class="service-item">
+      <p>תספורת גבר 50₪</p>
+      <img src="images/men_haircut.png" alt="שירות">
+    </div>
+    <div class="service-item">
+      <p>סידור זקן 10₪</p>
+      <img src="images/beard.png" alt="שירות">
+    </div>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const image = document.getElementById('userImage');
+      image.src = URL.createObjectURL(event.target.files[0]);
+      image.style.display = 'block';
+    }
+  </script>
+  <script src="upload.js"></script>
+</body>
+</html>
