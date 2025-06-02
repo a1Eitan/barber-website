@@ -4,7 +4,7 @@ function sendImageToZapier(file) {
   const formData = new FormData();
   formData.append('image', file);
 
-  fetch('https://hooks.zapier.com/hooks/catch/XXXX/YYYY', {
+  fetch('https://hooks.zapier.com/hooks/catch/22963341/2vrzzsi/', {
     method: 'POST',
     body: formData
   })
